@@ -1,0 +1,54 @@
+.tasksList{
+    @include ulStyleclean;
+    display: grid;
+    row-gap: $spacer__basic;
+
+    .task{
+        display: grid;
+        grid-template-columns: 30px 30px 1fr 48px;
+        background-color: $color__primary-dark;
+        border-radius: $spacer__basic*1.5;
+        align-items: center;
+        overflow: hidden;
+        
+        .highPriorityOff{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: $color__primary-light;
+        }
+        .highPriorityOn{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: $color__priority;
+        }
+
+        .doneCheck{
+            appearance: none;
+            margin: $spacer__basic*2;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 2px;
+
+            &:focus-visible{
+                outline: none;
+            }
+
+            &:checked{
+                background-color: green;
+                content:'';
+            }
+        }
+    }
+}
+
+.taskListDone{
+    .task{
+        h3{
+            text-decoration: line-through;
+        }
+    }
+}

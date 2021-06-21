@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import "./App.scss"
+import Header from './components/Header';
+import AddTaskForm from './components/AddTaskForm';
+import TasksList from './components/TasksList';
+import TasksListDone from './components/TasksListDone';
+import EmptyState from './components/EmptyState';
 
 function App() {
+
+  const [tasksData, setTasksData] = useState([
+    {
+        "id": "1",
+        "text": "Your first task",
+        "highPriority": true,
+        "done": false
+    }
+  ]);
+
+
+  const addTask = task => {
+    const id = Math.floor(Math.random() * 1000) + 1
+    const done = false
+    const newTask = { id, done, ...task }
+    setTasksData([...tasksData, newTask])
+  }
+
+  const deleteTask = (id) => {
+    setTasksData(tasksData.filter(task => task.id !== id))
+  }
+
+  const toggleTaskStatus = id => {
+    setTasksData(tasksData.map(task => (
+      task.id === id ? {...task, done: !task.done} : task
+    )))
+    console.log("Done", tasksData)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="MyTrack"/>
+      <AddTaskForm onAdd={addTask}/>
+      {tasksData.length > 0 ? <TasksList tasksData={tasksData} onDelete={deleteTask} taskStatus={toggleTaskStatus} /> : <EmptyState />}
+      {tasksData.length > 0 ? <TasksListDone tasksData={tasksData} onDelete={deleteTask} taskStatus={toggleTaskStatus} /> : null}
     </div>
   );
 }

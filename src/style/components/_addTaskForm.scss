@@ -1,0 +1,102 @@
+.addTask{
+    padding:$spacer__basic $spacer__basic*2;
+    margin: $spacer__basic $spacer__basic*3;
+    border-radius: $spacer__basic*1.5;
+
+    background-color: $color__primary-dark;
+
+    .addTaskForm{
+        padding: $spacer__basic;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacer__basic*2;
+        align-items: center;
+    
+        input[type=text]{
+            background-color: transparent;
+            color: $color__secondary;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            padding: $spacer__basic*2 0;
+            border: none;
+
+            grid-column: 1/3;
+
+            &::placeholder{
+                color: $color__secondary;
+            }
+
+            &:focus-visible{
+                outline: none;
+            }
+        }
+
+        .highPriority{
+            display: grid;
+            grid-template-columns: auto 1fr;
+
+            p{
+                font-size: 0.6em;
+            }
+            
+            .switch{
+                position: relative;
+                display: inline-block;
+                width: $spacer__basic*7.5;
+                height: $spacer__basic*4;
+    
+                .inputCheckbox{
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+    
+                .switchSlider{
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: $spacer__basic*4;
+                    background-color: $color__primary;
+    
+                    &::before{
+                        position: absolute;
+                        content: "";
+                        height: 26px;
+                        width: 26px;
+                        top: 3px;
+                        right: 30px;
+                        background-color: $color__primary-light;
+                        border-radius: 50%;
+                        transition: right .4s;
+                    }
+                }
+    
+                input:checked + .switchSlider:before{
+                    right: 3px;
+                    background-color: $color__secondary;
+                }
+            }
+        }
+
+        .btnRight{
+            text-align: right;
+            .btn{
+                appearance: none;
+                cursor: pointer;
+                background-color: $color__secondary;
+                color: white;
+                border: none;
+                padding: $spacer__basic*1.5 $spacer__basic*3;
+                border-radius: $spacer__basic;
+                text-transform: uppercase;
+                justify-content: right;
+                &:hover{
+                    background-color: $color__secondary-light;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import "./style/abstract/abstract";
+@import "./style/generic";
+@import "./style/components";
+
+body{
+  background-color: $color__primary;
+  color: $color__secondary;
+}
