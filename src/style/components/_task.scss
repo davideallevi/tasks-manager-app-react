@@ -5,7 +5,7 @@
 
     .task{
         display: grid;
-        grid-template-columns: 30px 30px 1fr 48px;
+        grid-template-columns: 16% 8% 1fr 16%;
         background-color: $color__primary-dark;
         border-radius: $spacer__basic*1.5;
         align-items: center;

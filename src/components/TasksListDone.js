@@ -3,7 +3,7 @@ import Task from './Task'
 const TasksListDone = ({ tasksData, onDelete, taskStatus }) => {
     
     return (
-        <section>
+        <section className="tasksListSection tasksListSectionDone">
             <h2>Done:</h2>
             <ul className="tasksList taskListDone">
                 {tasksData.filter(task => task.done === true).sort(a => !a.highPriority ? 1 : -1).map(task => (
