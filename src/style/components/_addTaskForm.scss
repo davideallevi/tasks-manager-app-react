@@ -1,6 +1,5 @@
 .addTask{
     padding:$spacer__basic $spacer__basic*2;
-    margin: $spacer__basic $spacer__basic*3;
     border-radius: $spacer__basic*1.5;
 
     background-color: $color__primary-dark;
@@ -37,6 +36,7 @@
 
             p{
                 font-size: 0.6em;
+                margin-right: $spacer__basic;
             }
             
             .switch{
