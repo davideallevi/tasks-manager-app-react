@@ -8,7 +8,7 @@ import iconTeams from '../assets/icon-teams.svg'
 import iconCharts from '../assets/icon-charts.svg'
 import iconSettings from '../assets/icon-settings.svg'
 
-const Navigation = (props) => {
+const NavigationMobile = (props) => {
     const [navItems, setNavItems] = useState([
         {
             "id": "1",
@@ -44,18 +44,13 @@ const Navigation = (props) => {
 
     return (
         <nav>
-            <ul className="navItems">
+            <ul className="navItemsMobile">
                 {navItems.map((navItem) =>(
-                    <li className="navItem" key={navItem.id}>
-                        <a href="/" className="navItemLink">
-                            <img className="icon navItemIcon" src={navItem.icon} alt="" />
-                            <div className="navItemTitle">{navItem.title}</div>
-                        </a>
-                    </li>
+                    <li className="navItem" key={navItem.id}><a href="/"><img className="icon navItemIcon" src={navItem.icon} alt="" /><div>{navItem.title}</div></a></li>
                 ))}
             </ul>
         </nav>
     )
 }
 
-export default Navigation
+export default NavigationMobile

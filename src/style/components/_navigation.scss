@@ -1,27 +1,39 @@
-.navItems{
-    @include ulStyleclean;
-    background-color: $color__primary-dark;
+header{
 
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-
-    .navItem{
-        text-align: center;
-        padding: $spacer__basic*2;
+    @media screen and (min-width: 720px){
+        background-color: $color__primary-dark;
+        padding: $spacer__basic*3;
     }
 
-    a{
-        display: block;
-        color: white;
-        text-decoration: none;
-        font-size: 0.6em;
-        text-transform: capitalize;
+    .navItems{
+        display: none;
+        @media screen and (min-width: 720px) {
+            @include ulStyleclean;
+            background-color: $color__primary-dark;
+            z-index: 2;
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .navItem{
+                padding: $spacer__basic*2 0;
+            }
+
+            a{
+                display: grid;
+                grid-template-columns: 20px auto;
+                column-gap: $spacer__basic;
+
+                color: $color__secondary;
+                background-color: $color__primary;
+                text-decoration: none;
+                font-size: .8em;
+                text-transform: capitalize;
+                border-radius: $spacer__basic;
+                padding: $spacer__basic $spacer__basic*2;
+            }
+            
+        }
     }
 }

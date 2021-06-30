@@ -1,0 +1,15 @@
+.tasksListSection{
+    padding: $spacer__basic*2 0;
+
+    h2{
+        padding-left: $spacer__basic/2;
+    }
+}
+
+.tasksListSectionDone{
+    padding: $spacer__basic*2 0 $spacer__basic*12 0;
+
+    h2{
+        padding-left: $spacer__basic/2;
+    }
+}

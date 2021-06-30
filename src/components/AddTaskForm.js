@@ -27,10 +27,10 @@ const AddTaskForm = ({ onAdd }) => {
                     <p>Hight priority</p>
                     <label className="switch switchHighPriority">
                         <input className="input inputCheckbox" type="checkbox" checked={highPriority} value={highPriority} onChange={(e) => setHighPriority(e.currentTarget.checked)}></input>
-                        <span class="switchSlider"></span>
+                        <span className="switchSlider"></span>
                     </label>
                 </div>
-                <div class="btnRight">
+                <div className="btnRight">
                     <button type="submit" className="btn">add</button>
                 </div>
             </form>

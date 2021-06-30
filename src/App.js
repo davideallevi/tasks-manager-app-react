@@ -39,9 +39,11 @@ function App() {
   return (
     <div className="App">
       <Header title="MyTrack"/>
-      <AddTaskForm onAdd={addTask}/>
-      {tasksData.length > 0 ? <TasksList tasksData={tasksData} onDelete={deleteTask} taskStatus={toggleTaskStatus} /> : <EmptyState />}
-      {tasksData.length > 0 ? <TasksListDone tasksData={tasksData} onDelete={deleteTask} taskStatus={toggleTaskStatus} /> : null}
+      <main>
+        <AddTaskForm onAdd={addTask}/>
+        {tasksData.length > 0 ? <TasksList tasksData={tasksData} onDelete={deleteTask} taskStatus={toggleTaskStatus} /> : <EmptyState />}
+        {tasksData.length > 0 ? <TasksListDone tasksData={tasksData} onDelete={deleteTask} taskStatus={toggleTaskStatus} /> : null}
+      </main>
     </div>
   );
 }

@@ -1,4 +1,31 @@
 body{
-    margin: 0 $spacer__basic*3;
-    padding: 0;
+
+    margin: 0;
+    
+    @media screen and (max-width: 720px){
+        margin: 0 $spacer__basic*3;
+        padding: 0;
+    }
+
+    #root{
+        .App{
+            @media screen and (min-width: 720px) {
+                
+                header{
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    top: 0;
+                    width: 250px;
+                }
+
+                main{
+                    margin-left: 298px;
+                    padding: $spacer__basic*8 10%;
+                }
+            }
+            
+        }
+    }
+
 }
