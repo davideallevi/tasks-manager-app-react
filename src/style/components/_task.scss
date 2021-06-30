@@ -5,7 +5,7 @@
 
     .task{
         display: grid;
-        grid-template-columns: 16% 8% 1fr 16%;
+        grid-template-columns: auto auto 1fr auto;
         background-color: $color__primary-dark;
         border-radius: $spacer__basic*1.5;
         align-items: center;
@@ -22,6 +22,12 @@
             height: 10px;
             border-radius: 5px;
             background-color: $color__priority;
+            margin: 0 $spacer__basic;
+        }
+
+        img{
+            padding: $spacer__basic/2;
+            margin: 0 $spacer__basic*2;
         }
 
         .doneCheck{

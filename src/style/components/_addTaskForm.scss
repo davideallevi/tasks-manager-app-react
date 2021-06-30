@@ -30,6 +30,13 @@
             }
         }
 
+        @media screen and (min-width: 960px) {
+            grid-template-columns: 1fr auto auto;
+            input[type=text]{
+                grid-column: 1/2;
+            }
+        }
+
         .highPriority{
             display: grid;
             grid-template-columns: auto 1fr;
