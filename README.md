@@ -2,8 +2,7 @@
 
 Work in progress. Missing tasks:
 <ul>
-    <li>styling button states</li>
-    <li>"new task" button on mobile to toggle AddTaskForm</li>
+    <li>"new task" button on mobile screen to toggle AddTaskForm</li>
     <li>micro interactions and animations</li>
     <li>"Done" checkbox style<li>
     <li>Generic style adjustments</li>
