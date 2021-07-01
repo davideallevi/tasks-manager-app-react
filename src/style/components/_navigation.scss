@@ -20,7 +20,20 @@ header{
                 padding: $spacer__basic*2 0;
             }
 
-            a{
+            .navItemLink{
+                display: grid;
+                grid-template-columns: 20px auto;
+                column-gap: $spacer__basic;
+
+                color: $color__secondary;
+                text-decoration: none;
+                font-size: .8em;
+                text-transform: capitalize;
+                border-radius: $spacer__basic;
+                padding: $spacer__basic $spacer__basic*2;
+            }
+
+            .navItemLinkActive{
                 display: grid;
                 grid-template-columns: 20px auto;
                 column-gap: $spacer__basic;

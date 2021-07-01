@@ -9,7 +9,8 @@ import iconCharts from '../assets/icon-charts.svg'
 import iconSettings from '../assets/icon-settings.svg'
 
 const NavigationMobile = (props) => {
-    const [navItems, setNavItems] = useState([
+
+    const navItems = [
         {
             "id": "1",
             "title": "dashboard",
@@ -40,13 +41,18 @@ const NavigationMobile = (props) => {
             "icon": iconSettings,
             "active": false
         },
-    ])
+    ]
 
     return (
         <nav>
             <ul className="navItemsMobile">
                 {navItems.map((navItem) =>(
-                    <li className="navItem" key={navItem.id}><a href="/"><img className="icon navItemIcon" src={navItem.icon} alt="" /><div>{navItem.title}</div></a></li>
+                    <li className="navItem" key={navItem.id}>
+                        <a href="/" className={(navItem.active) ? "navItemLinkActive" : "navItemLink"}>
+                            <img className="icon navItemIcon" src={navItem.icon} alt="" />
+                            <div>{navItem.title}</div>
+                        </a>
+                    </li>
                 ))}
             </ul>
         </nav>

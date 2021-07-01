@@ -21,7 +21,15 @@
         padding: $spacer__basic*2;
     }
 
-    a{
+    .navItemLink{
+        display: block;
+        color: $color__secondary;
+        text-decoration: none;
+        font-size: 0.6em;
+        text-transform: capitalize;
+    }
+
+    .navItemLinkActive{
         display: block;
         color: white;
         text-decoration: none;
